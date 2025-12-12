@@ -65,18 +65,6 @@
     .navbar-brand { color: white !important; }
   
   
- 
-
-  .social-icon i {
-    font-size: 2rem;
-  }
-
-  /* Brand Colors */
-  .social-icon.youtube { color: #FF0000; }
-  .social-icon.tiktok { color: #69C9D0; }
-  .social-icon.facebook { color: #1877F2; }
-
-  
   
   
   </style>
@@ -138,17 +126,7 @@
     <h1>Hello, I'm <span class="text-primary">Jay S. Orpiada</span></h1>
     <p class="lead mt-2">ACT-1 Web Programming 101</p>
 
-    <!-- Social Media Icons -->
-    <div class="mt-3">
-      <a href="https://www.youtube.com/" target="_blank" class="text-white mx-2 fs-3 social-icon">
-        <i class="bi bi-youtube"></i>
-      </a>
-      <a href="https://www.tiktok.com/" target="_blank" class="text-white mx-2 fs-3 social-icon">
-        <i class="bi bi-tiktok"></i>
-      </a>
-      <a href="https://www.facebook.com/" target="_blank" class="text-white mx-2 fs-3 social-icon">
-        <i class="bi bi-facebook"></i>
-      </a>
+    
     </div>
   </div>
 </section>
@@ -186,10 +164,50 @@
             <li class="list-group-item" style="background: transparent; border: none;">🛠️ <strong>IT Staff</strong> — providing general technical support and troubleshooting</li>
             <li class="list-group-item" style="background: transparent; border: none;">🎬 <strong>Content Creator & Video Editor</strong> — producing educational and creative multimedia content</li>
           </ul>
-          <p class="mt-3">Passionate about <strong>web development, modern digital solutions, and multimedia creation</strong>.</p>
+         <p class="mt-3">Passionate about <strong>web development, modern digital solutions, and multimedia creation</strong>.</p>
+
+<!-- Social Media Icons (Centered) -->
+<div class="mt-4 text-center">
+  <a href="https://www.youtube.com/" target="_blank" class="social-icon youtube mx-2 fs-3">
+    <i class="bi bi-youtube"></i>
+  </a>
+  <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok mx-2 fs-3">
+    <i class="bi bi-tiktok"></i>
+  </a>
+  <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook mx-2 fs-3">
+    <i class="bi bi-facebook"></i>
+  </a>
+</div>
+
+<!-- Social Icon Colors and Hover Effect -->
+<style>
+  .social-icon i {
+    font-size: 1.8rem;
+    transition: transform 0.2s;
+  }
+  .social-icon.youtube { color: #FF0000; }
+  .social-icon.tiktok { color: #69C9D0; }
+  .social-icon.facebook { color: #1877F2; }
+
+  /* Hover Scale */
+  .social-icon:hover i {
+    transform: scale(1.2);
+  }
+</style>
+
+
+     
+       
+       
+       
         </div>
       </div>
 
+ 
+     
+     
+     
+     
       <!-- Profile Video -->
       <div class="col-md-6 text-center">
         <video autoplay muted loop playsinline class="rounded-circle shadow-lg" style="width:200px; height:200px; object-fit:cover; border:3px solid #fff;">
