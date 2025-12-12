@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+  body, html { height: 100%; margin: 0; font-family: Arial, sans-serif; }
+
+  /* Background video */
+  video#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2; /* behind everything */
+  }
+
+  /* Dark overlay */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); /* stronger opacity for profile highlight */
+    z-index: -1; /* above bg-video but below profile/video content */
+  }
+
+  /* Profile video responsiveness */
+  .profile-video {
+    max-width: 25vw;
+    max-height: 25vw;
+    min-width: 100px;
+    min-height: 100px;
+  }
+
+
+ #backToTop {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  #backToTop:hover {
+    transform: translateY(-5px);
+    background-color: #2575fc;
+  }
+
+
+
+
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      z-index: 1;
+      position: relative;
+    }
+    .project-card { transition: transform 0.2s; }
+    .project-card:hover { transform: scale(1.03); }
+    .navbar .nav-link { color: white !important; }
+    .navbar-brand { color: white !important; }
+  
+  
+  
+  
+  
+  
+  </style>
+</head>
+<body>
+  <!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="sample.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div class="overlay"></div>
+
+  <!-- NAVBAR WITH COLORFUL BUTTON LINKS -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm" style="border-bottom: 3px solid #2575fc;">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#projects" style="color: #2575fc;">MyPortfolio</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item me-2">
+          <a class="btn btn-primary fw-bold" href="#about">About</a>
+        </li>
+        <li class="nav-item me-2">
+          <a class="btn btn-success fw-bold" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item me-2">
+          <a class="btn btn-danger fw-bold" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-warning fw-bold text-dark" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap CSS & JS (if not included yet) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- HERO SECTION -->
+<section class="hero position-relative text-center" style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white;">
+
+  <!-- Circular Profile Video -->
+<video autoplay muted loop playsinline 
+       class="profile-video rounded-circle shadow"
+       style="width:180px; height:180px; border:4px solid #fff; object-fit:cover; z-index:2; position:relative;">
+  <source src="profile.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+  <!-- Hero Text -->
+  <div class="container mt-3">
+    <h1>Hello, I'm <span class="text-primary">Jay S. Orpiada</span></h1>
+    <p class="lead mt-2">ACT-1 Web Programming 101</p>
+  </div>
+</section>
+
+  <!-- ABOUT SECTION -->
+<section id="about" class="py-5 bg-light text-dark">
+  <div class="container">
+    <h2 class="fw-bold mb-5 text-center">About Me</h2>
+    <div class="row g-4 align-items-center">
+      
+      <!-- Profile / Info Card -->
+      <div class="col-md-6">
+        <div class="card shadow-lg text-white p-4" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); border-radius:15px;">
+          <h5 class="fw-bold mb-3">Jay S. Orpiada</h5>
+          <p>I am currently a <strong>1st-year student at Naga College Foundation</strong>, taking up <strong>ACT 1 Associate in Computer Technology</strong>.</p>
+          <p>In addition to my studies, I serve as a <strong>Government Employee</strong> at <strong>SDO CamSur, Department of Education</strong>, where I hold multiple roles:</p>
+          <ul class="list-group list-group-flush text-white">
+            <li class="list-group-item" style="background: transparent; border: none;">💻 <strong>Network Administrator</strong> — managing IT infrastructure and connectivity</li>
+            <li class="list-group-item" style="background: transparent; border: none;">🖥️ <strong>In-house Programmer</strong> — creating basic programs to support school operations</li>
+            <li class="list-group-item" style="background: transparent; border: none;">🛠️ <strong>IT Staff</strong> — providing general technical support and troubleshooting</li>
+            <li class="list-group-item" style="background: transparent; border: none;">🎬 <strong>Content Creator & Video Editor</strong> — producing educational and creative multimedia content</li>
+          </ul>
+          <p class="mt-3">Passionate about <strong>web development, modern digital solutions, and multimedia creation</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Profile Video -->
+      <div class="col-md-6 text-center">
+        <video autoplay muted loop playsinline class="rounded-circle shadow-lg" style="width:200px; height:200px; object-fit:cover; border:3px solid #fff;">
+          <source src="profile.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold mb-5 text-center">Projects</h2>
+    <div class="row g-4">
+
+      <!-- Image1: PABX Communication System -->
+      <div class="col-md-4">
+        <div class="card project-card text-white shadow-lg" style="background: linear-gradient(135deg, #ff6a00, #ee0979); border-radius:15px; transition: transform 0.3s;">
+          <div class="card-body text-center">
+            <div class="mb-3" style="font-size:40px;">📞</div>
+            <h5 class="card-title">PABX Communication System</h5>
+            <p class="card-text">Developed a reliable communication system for SDO CamSur using PABX integration.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image2: Queuing System Tracking -->
+      <div class="col-md-4">
+        <div class="card project-card text-white shadow-lg" style="background: linear-gradient(135deg, #11998e, #38ef7d); border-radius:15px; transition: transform 0.3s;">
+          <div class="card-body text-center">
+            <div class="mb-3" style="font-size:40px;">📝</div>
+            <h5 class="card-title">Queuing System Tracking</h5>
+            <p class="card-text">Implemented an efficient queuing and tracking system to manage requests and workflow.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image3: HRMIS System -->
+      <div class="col-md-4">
+        <div class="card project-card text-white shadow-lg" style="background: linear-gradient(135deg, #4776e6, #8e54e9); border-radius:15px; transition: transform 0.3s;">
+          <div class="card-body text-center">
+            <div class="mb-3" style="font-size:40px;">👥</div>
+            <h5 class="card-title">HRMIS System</h5>
+            <p class="card-text">Developed and maintained the Human Resource Management Information System for SDO CamSur.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image4: WiFi Portal System -->
+      <div class="col-md-4">
+        <div class="card project-card text-white shadow-lg" style="background: linear-gradient(135deg, #ff512f, #dd2476); border-radius:15px; transition: transform 0.3s;">
+          <div class="card-body text-center">
+            <div class="mb-3" style="font-size:40px;">📶</div>
+            <h5 class="card-title">WiFi Portal System</h5>
+            <p class="card-text">Created a secure WiFi portal system for SDO CamSur employees and guests.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image5: Biometric Attendance System -->
+      <div class="col-md-4">
+        <div class="card project-card text-white shadow-lg" style="background: linear-gradient(135deg, #00c6ff, #0072ff); border-radius:15px; transition: transform 0.3s;">
+          <div class="card-body text-center">
+            <div class="mb-3" style="font-size:40px;">🕒</div>
+            <h5 class="card-title">Biometric Attendance System</h5>
+            <p class="card-text">Implemented a Biometric Attendance System for CamSur employees to ensure accurate timekeeping.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image6: Document Tracking System (EDOTS) -->
+      <div class="col-md-4">
+        <div class="card project-card text-white shadow-lg" style="background: linear-gradient(135deg, #f7971e, #ffd200); border-radius:15px; transition: transform 0.3s;">
+          <div class="card-body text-center">
+            <div class="mb-3" style="font-size:40px;">📂</div>
+            <h5 class="card-title">Document Tracking System (EDOTS)</h5>
+            <p class="card-text">Developed the EDOTS system to track and manage documents efficiently in SDO CamSur.</p>
+          </div>
+        </div>
+      </div>
+ <!-- Image7:FINANCIAL CLAIMS MONITORING SYSTEM (FCOMS) -->
+      <div class="col-md-4">
+        <div class="card project-card text-white shadow-lg" style="background: linear-gradient(135deg, #f7971e, #ffd200); border-radius:15px; transition: transform 0.3s;">
+          <div class="card-body text-center">
+            <div class="mb-3" style="font-size:40px;">📂</div>
+            <h5 class="card-title">FINANCIAL CLAIMS MONITORING SYSTEM (FCOMS)</h5>
+            <p class="card-text">Developed the FCOMS system to track and manage Financial documents efficiently in SDO CamSur.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Hover Animation Script -->
+<style>
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="fw-bold mb-5 text-center">Gallery</h2>
+    <div class="row g-4">
+
+      <!-- Gallery Items -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="2.jpg" class="card-img-top gallery-img" alt="Gallery Image 1">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image1</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="1.jpg" class="card-img-top gallery-img" alt="Gallery Image 2">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image2</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="3.jpg" class="card-img-top gallery-img" alt="Gallery Image 3">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image3</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="4.png" class="card-img-top gallery-img" alt="Gallery Image 4">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image4</h6>
+          </div>
+        </div>
+      </div>
+
+<div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="5.jpg" class="card-img-top gallery-img" alt="Gallery Image 2">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image5</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="6.png" class="card-img-top gallery-img" alt="Gallery Image 3">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image6</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="7.png" class="card-img-top gallery-img" alt="Gallery Image 4">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image7</h6>
+          </div>
+        </div>
+      </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm border-0 gallery-card overflow-hidden">
+          <img src="8.jpg" class="card-img-top gallery-img" alt="Gallery Image 4">
+          <div class="card-img-overlay d-flex align-items-end p-2 overlay-text">
+            <h6 class="text-white m-0">Image8</h6>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Gallery CSS -->
+<style>
+  .gallery-img {
+    width: 100%;
+    height: 200px; /* same height for all images */
+    object-fit: cover; /* fill card without stretching */
+    transition: transform 0.3s ease;
+  }
+  .gallery-card:hover .gallery-img {
+    transform: scale(1.05);
+  }
+  .overlay-text {
+    background: rgba(0, 0, 0, 0.3); /* semi-transparent overlay */
+    border-radius: 0 0 10px 10px;
+  }
+</style>
+
+
+<!-- Gallery Hover Effect -->
+<style>
+  .gallery-card img {
+    transition: transform 0.3s ease;
+  }
+  .gallery-card:hover img {
+    transform: scale(1.05);
+  }
+</style>
+
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-5 bg-light text-dark">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Contact</h2>
+      <p>If you would like to work with me or have any questions, feel free to reach out.</p>
+      <a href="mailto:youremail@example.com" class="btn btn-primary">Email Me</a>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" class="btn btn-primary shadow-lg" 
+        style="position: fixed; bottom: 30px; right: 30px; display: none; border-radius:50%;">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!-- Back to Top JS -->
+<script>
+  // Show button when scrolling down
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+
+  // Smooth scroll to top when clicked
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
