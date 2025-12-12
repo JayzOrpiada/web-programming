@@ -65,7 +65,17 @@
     .navbar-brand { color: white !important; }
   
   
-  
+ 
+
+  .social-icon i {
+    font-size: 2rem;
+  }
+
+  /* Brand Colors */
+  .social-icon.youtube { color: #FF0000; }
+  .social-icon.tiktok { color: #69C9D0; }
+  .social-icon.facebook { color: #1877F2; }
+
   
   
   
@@ -112,23 +122,25 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- HERO SECTION -->
-<section class="hero position-relative text-center" style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white;">
+<section class="hero position-relative text-center" 
+         style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white;">
 
   <!-- Circular Profile Video -->
-<video autoplay muted loop playsinline 
-       class="profile-video rounded-circle shadow"
-       style="width:180px; height:180px; border:4px solid #fff; object-fit:cover; z-index:2; position:relative;">
-  <source src="profile.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <video autoplay muted loop playsinline 
+         class="profile-video rounded-circle shadow-lg mb-3"
+         style="width:180px; height:180px; border:4px solid #fff; object-fit:cover; z-index:2;">
+    <source src="profile.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <!-- Hero Text -->
-  <div class="container mt-3">
+  <div class="container mt-2">
     <h1>Hello, I'm <span class="text-primary">Jay S. Orpiada</span></h1>
     <p class="lead mt-2">ACT-1 Web Programming 101</p>
- 
-   <!-- Social Media Icons -->
+
+    <!-- Social Media Icons -->
     <div class="mt-3">
-      <a href="https://youtube.com/@randommvidyows?si=GG-o1cMTQ9SCsUPU/" target="_blank" class="text-white mx-2 fs-3 social-icon">
+      <a href="https://www.youtube.com/" target="_blank" class="text-white mx-2 fs-3 social-icon">
         <i class="bi bi-youtube"></i>
       </a>
       <a href="https://www.tiktok.com/" target="_blank" class="text-white mx-2 fs-3 social-icon">
@@ -139,11 +151,22 @@
       </a>
     </div>
   </div>
-  
-  
-  
-  </div>
 </section>
+
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!-- Social Icon Hover Effect -->
+<style>
+  .social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-icon:hover {
+    transform: scale(1.2);
+    color: #2575fc; /* Change to match theme */
+  }
+</style>
+
 
   <!-- ABOUT SECTION -->
 <section id="about" class="py-5 bg-light text-dark">
@@ -426,4 +449,3 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
-
